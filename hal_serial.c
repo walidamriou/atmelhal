@@ -61,8 +61,8 @@ void hal_serial_UART0_send(uint8_t * const  tx_data_addr, uint16_t tx_data_len){
   tx_data_addr_buf = tx_data_addr;
   for (size_t i = 0; i < tx_data_len; i++){
     // dis interrupt
-    tx_data_addr_buf++;
     UDR0 = *tx_data_addr_buf;
+    tx_data_addr_buf++;
     // en interrupt
   }
 }
