@@ -36,13 +36,31 @@ performance of this software or code or scripts or any files in this source.
 #ifndef HAL_SERIAL_H
 #define HAL_SERIAL_H
 
-/* Serial Config */
+/*** start Serial Config ***/
 #define SERIAL_BAUD_RATE 9600
+
+/*** end Serial config ***/
 
 #define BAUD SERIAL_BAUD_RATE
 #include <util/setbaud.h>
 
 /* functions */
+
+/*
+ * @brief Initialize the serial port
+ * @param none
+ * @return none
+ */
 void hal_serial_UART0_init(void);
+
+/*
+ * @brief send data via UART0
+ * @param tx_data_addr: address of the data to be sent
+ * @param tx_data_len: length of the data to be sent
+ * @return none
+ * @note: if you want to send data call X, even it is a array or variable, you must write:
+ *        hal_serial_UART0_send((uint8_t *)&X,sizeof(X));
+ */
 void hal_serial_UART0_send(uint8_t * const tx_data_addr, uint16_t tx_data_len);
+
 #endif
