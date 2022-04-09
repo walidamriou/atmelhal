@@ -55,9 +55,10 @@ void hal_serial_UART0_init(void){
 
 
 void hal_serial_UART0_send(uint8_t * const tx_data_addr, uint16_t tx_data_len){
-  uint8_t *tx_data_addr_buf = &tx_data_addr[0];
+  // save the address of the data to be sent in buffer
+  uint8_t *tx_data_addr_buf = tx_data_addr;
   for (uint16_t i = 0; i < tx_data_len; i++){
-    loop_until_bit_is_set(UCSR0A, UDRE0); // UDRE0 is USART Data Register Empty
+    loop_until_bit_is_set(UCSR0A, UDRE0); // loop unitl UDRE0 (USART Data Register) is Empty  
     UDR0 = *tx_data_addr_buf;
     tx_data_addr_buf++;
   }
