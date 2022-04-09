@@ -1,4 +1,4 @@
-# Open Atmel HAL
+# atmelhal
 Open-source Hardware Abstraction Layer for Atmel microcontrollers (ATmega2560, ATmega328P, ATmega328, etc)
 
 ### HAL content
