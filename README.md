@@ -1,4 +1,5 @@
-# Open Atmel HAL
+# open_atmel_hal_library
+
 Open-source Hardware Abstraction Layer for Atmel microcontrollers (ATmega2560, ATmega328P, ATmega328, etc)
 
 ### Copyright CC 2022 Walid Amriou
